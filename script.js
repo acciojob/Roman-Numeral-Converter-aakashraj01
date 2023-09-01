@@ -10,6 +10,22 @@ function convertToRoman(num) {
     };
 
   //your code here
+	
+function convertToRoman(num) {
+  if (num < 0 || num > 100000) {
+    return "Invalid input. Please enter a number within the range of 0 to 100000.";
+  }
+
+  let result = "";
+  for (const numeral of romanNumerals) {
+    while (num >= numeral.value) {
+      result += numeral.symbol;
+      num -= numeral.value;
+    }
+  }
+
+  return result;
+}
 
 }
 // You can test your code by running the above function and printing it to console by pressing the run button at the top. To run it with input 36, uncomment the following line
